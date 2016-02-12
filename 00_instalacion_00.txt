@@ -1,0 +1,16 @@
+﻿/******************** I N S T A L A C I O N ************************\
+
+	1- Descomprimir el archivo dentro de la carpeta raíz de un servidor (con PHP y MySQL).
+	2- Crear una base de datos MySQL llamada "coloniax"
+	2.1 - Cambiar los datos del archivo .env y el archivo /app/config/database.php con los datos de tu conexión a la base de datos
+	3- Subir archivo "coloniax.sql" a la base de datos con los datos de prueba y las tablas de la aplicación.
+	4 - Ingresas al sistema siguiendo la ruta http://*DOMNIO*/*CARPETA*/public/register
+	5- Crea un usuario y accedé a la aplicación.
+
+/******************** U S O ************************\
+
+En en menu de facturas vas a encontrar las opcines de:
+
+	Agregar factura en la que agregarás una factura a un cliente
+	Una vez que hayas agregado por lo menos factura encontrarás una lista con las facturas creadas y un botón para confirmar que ya fue pagada, al hacer click en el botón de "Confirmar pago" Esa factura ya se encuentra paga.
+	Además pueden buscarse clientes por medio del buscador ingresando su nombre y apellido.

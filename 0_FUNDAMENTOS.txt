@@ -1,0 +1,60 @@
+Fundamentos del proyecto
+
+Análisis del problema:
+
+	Desde el punto de vista del cliente:
+		
+		Un cliente debe pagar un monto (¿Fijo, Variable?) todos los meses. Para ello debe:
+	1- Consultar su importe.
+	2- Pagar el importe.
+
+	Desde el punto de vista de la empresa:
+
+		La empresa debe cobrar un monto a un cliente (¿Cada cuanto lo cobra? ¿Quién carga este monto?). Para esto debe:
+
+	1- Registrar que el usuario fue hasta el edificio.
+	2- Con su nombre y apellido buscar la planilla del cliente para obtener el monto a pagar por el cliente.
+	3- Informar al cajero el nombre del cliente y el monto a pagar.
+	4- El cajero debe informar que el cliente pagó el monto.
+
+	Cada uno de estos pasos lo realiza una persona diferente: El recepcionista, algún empleado del departamento administrativo que debe atender el teléfono y el cajero.
+
+	Si se piensa desde el punto de vista del cliente tener que ir hasta el edificio solo para pagar las facturas no es tanto, pero en el medio éste pierde mucho tiempo.
+
+Solución:
+
+	Dos soluciones para automatizar la tarea:
+
+	El cliente va hasta al empresa al puesto del cajero, le da su nombre y apellido. El cajero busca en el sistema el nombre del cliente , desde el sistema recibe el importe a pagar por el cliente. El cajero informa al cliente sobre el importe, éste paga. El cajero ingresa al sistema que el cliente pagó el importe.
+	El cliente se va.
+
+	Aquí el problema se resuelve mediante un empleado que ingresa al sistema de cobro de la empresa y lo único que hace es consultar por los saldos e y confirmar un pago.
+	El sistema debe ser cargado por algún empleado del sector de administración donde pone que un cliente X debe pagar tanto.
+
+	Esta solución no solo requiere menos gente sino que es menos tediosa para el cliente, el tiempo de espera es menor.
+
+	Solución 2 (o complementaria):
+
+	El cliente ingresa en una aplicación de la empresa. Se loguea con un nombre de usuario y contraseña. Accede a la aplicación que en la primer página podría tener información sobre novedades o promociones de la empresa. El cliente hace click en el botón para ver sus facturas, ve las pagas, las que adeuda y mediante pago con tarjeta de crédito o utilizando una herramienta como mercadopago paga. Si lo hace en un pago fácil o rapi pago confirma la transacción con el número del comprovante por el cobrador de pago fácil y listo.
+
+	Igual que la solución anterior las facturas de los cliente deben ser cargadas por alguien del sector administrativo. Para el cliente es una opció muy cómoda. Para la empresa una tarea que antes la realizaban 3 personas ahora la realiza solo una.
+
+
+Tecnologías:
+
+	Servidores Linux o windows en los que se pueda albergar una sistema realizado en PHP utilizando framework Laravel 5.2, el diseño con bootstrap y algo de javascript para interacción. Con una base de datos como MySQL, un navegador para poder interactuar con la aplicación.
+
+	La apliación contaría con un registro de usuarios con diversos roles:
+
+	- Administrador del sistema que podría agregar, editar y borrar cualquier contenido de la aplicación.
+	- Dataentry o administrativo: Puede cargar las facturas.
+	- Cajero. Puede buscar los clientes y confirmar los pagos de los mismos.
+
+	Para la solución 2 se le agrega un rol exclusivo para el cliente donde verá sus facturas pedientes, pagas y adeudadas para poder realizar sus trámites.
+
+Las preguntas al analista son:
+
+	¿El importe a pagar por el cliente es fijo o variable? ¿Si fuese variable que parámetro utiliza para variar?
+	¿La facturación es recurrente? ¿Tiene fechas fijadas? ¿Tiene fecha de vencimiento? ¿Hay alguien que cargue los montos?
+
+	Por otro lado ¿Se desea tener el edificio de la empresa un lugar destinado para los cajeros?
